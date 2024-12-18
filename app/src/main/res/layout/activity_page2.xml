@@ -15,7 +15,7 @@
         android:ems="10"
 
         android:inputType="text"
-        android:text="Nombres"
+        android:hint="Nombres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
         android:ems="10"
 
         android:inputType="text"
-        android:text="Apellidos"
+        android:hint="Apellidos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombres" />
@@ -40,7 +40,7 @@
         android:enabled="false"
 
         android:inputType="text"
-        android:text="Dividendo"
+        android:hint="Dividendo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextApellidos" />
@@ -53,7 +53,7 @@
         android:inputType="text"
         android:enabled="false"
 
-        android:text="Divisor"
+        android:hint="Divisor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDividendo" />
@@ -66,7 +66,7 @@
         android:enabled="false"
 
         android:inputType="text"
-        android:text="Numero"
+        android:hint="Numero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDivisor" />

@@ -42,7 +42,17 @@ public class MainActivity extends AppCompatActivity {
         divisor = findViewById(R.id.editTextDivisor);
         parteEntera = findViewById(R.id.editTextParteEntera);
         residuo = findViewById(R.id.editTextResiduo);
-        numeroInvertido = findViewById(R.id.editTextNumeroInvertido);
+
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            nombres.setText(intent.getStringExtra("nombres"));
+            apellidos.setText(intent.getStringExtra("apellidos"));
+            dividendo.setText(intent.getStringExtra("dividendo"));
+            divisor.setText(intent.getStringExtra("divisor"));
+            numero.setText(intent.getStringExtra("numero"));
+            buttonCerra.setEnabled(true);
+        }
     }
 
     public void Siguiente(View view){

@@ -20,6 +20,7 @@ public class PageActivity3 extends AppCompatActivity {
     private EditText divisor;
     private EditText numero;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +37,20 @@ public class PageActivity3 extends AppCompatActivity {
         dividendo = findViewById(R.id.editTextDividendo);
         divisor= findViewById(R.id.editTextDivisor);
         numero = findViewById(R.id.editTextNumero);
+
+        Bundle bundle = this.getIntent().getExtras();
+        nombres.setText(bundle.getString("nombres"));
+        apellidos.setText(bundle.getString("apellidos"));
+
     }
 
     public void cerrar(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, PageActivity2.class);
+        intent.putExtra("nombres",nombres.getText().toString());
+        intent.putExtra("apellidos",apellidos.getText().toString());
+        intent.putExtra("dividendo",dividendo.getText().toString());
+        intent.putExtra("divisor",divisor.getText().toString());
+        intent.putExtra("numero",numero.getText().toString());
         startActivity(intent);
     }
 }

@@ -3,6 +3,7 @@ package com.example.milton_urgilez_prueba_02;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +19,7 @@ public class PageActivity2 extends AppCompatActivity {
     private EditText dividendo;
     private EditText divisor;
     private EditText numero;
+    private Button buttonCerra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class PageActivity2 extends AppCompatActivity {
         dividendo = findViewById(R.id.editTextDividendo);
         divisor= findViewById(R.id.editTextDivisor);
         numero = findViewById(R.id.editTextNumero);
-
+        buttonCerra=findViewById(R.id.buttonCerrar);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -44,8 +46,8 @@ public class PageActivity2 extends AppCompatActivity {
             dividendo.setText(intent.getStringExtra("dividendo"));
             divisor.setText(intent.getStringExtra("divisor"));
             numero.setText(intent.getStringExtra("numero"));
+            buttonCerra.setEnabled(true);
         }
-
     }
 
 
