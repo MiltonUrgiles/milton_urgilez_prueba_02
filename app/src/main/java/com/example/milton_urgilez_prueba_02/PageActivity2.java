@@ -1,6 +1,9 @@
 package com.example.milton_urgilez_prueba_02;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class PageActivity2 extends AppCompatActivity {
+
+    private EditText nombres;
+    private EditText apellidos;
+    private EditText dividendo;
+    private EditText divisor;
+    private EditText numero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +29,35 @@ public class PageActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        nombres = findViewById(R.id.editTextNombres);
+        apellidos = findViewById(R.id.editTextApellidos);
+        dividendo = findViewById(R.id.editTextDividendo);
+        divisor= findViewById(R.id.editTextDivisor);
+        numero = findViewById(R.id.editTextNumero);
+
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            nombres.setText(intent.getStringExtra("nombres"));
+            apellidos.setText(intent.getStringExtra("apellidos"));
+            dividendo.setText(intent.getStringExtra("dividendo"));
+            divisor.setText(intent.getStringExtra("divisor"));
+            numero.setText(intent.getStringExtra("numero"));
+        }
+
+    }
+
+
+    public void Siguiente(View view) {
+        Intent intent = new Intent(this, PageActivity3.class);
+        intent.putExtra("nombres", nombres.getText().toString());
+        intent.putExtra("apellidos", apellidos.getText().toString());
+        startActivity(intent);
+    }
+
+    public void cerrar(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

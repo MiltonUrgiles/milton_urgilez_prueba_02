@@ -76,7 +76,6 @@
         android:layout_width="353dp"
         android:layout_height="47dp"
         android:layout_marginTop="368dp"
-        android:enabled="false"
 
         android:text="Cerrar"
         app:layout_constraintEnd_toEndOf="parent"

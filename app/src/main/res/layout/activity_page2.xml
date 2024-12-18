@@ -77,8 +77,9 @@
         android:layout_width="353dp"
         android:layout_height="47dp"
         android:layout_marginTop="240dp"
-        android:text="Siguiente"
+        android:onClick="Siguiente"
 
+        android:text="Siguiente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,9 +89,10 @@
         android:id="@+id/buttonCerrar"
         android:layout_width="353dp"
         android:layout_height="47dp"
-        android:text="Cerrar"
         android:enabled="false"
+        android:onClick="cerrar"
 
+        android:text="Cerrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
