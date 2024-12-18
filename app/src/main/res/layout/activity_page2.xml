@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PageActivity2">
 
     <EditText
         android:id="@+id/editTextNombres"
@@ -13,7 +13,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:enabled="false"
+
         android:inputType="text"
         android:text="Nombres"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,6 @@
         android:layout_width="339dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:enabled="false"
 
         android:inputType="text"
         android:text="Apellidos"
@@ -60,43 +59,18 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextDividendo" />
 
     <EditText
-        android:id="@+id/editTextParteEntera"
+        android:id="@+id/editTextNumero"
         android:layout_width="339dp"
         android:layout_height="40dp"
         android:ems="10"
         android:enabled="false"
 
         android:inputType="text"
-        android:text="Parte entera"
+        android:text="Numero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDivisor" />
 
-    <EditText
-        android:id="@+id/editTextNumeroInvertido"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:enabled="false"
-
-        android:inputType="text"
-        android:text="Num. Invertido"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextResiduo" />
-
-    <EditText
-        android:id="@+id/editTextResiduo"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:enabled="false"
-
-        android:inputType="text"
-        android:text="Residuo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextParteEntera" />
 
     <Button
         android:id="@+id/buttonSiguiente"
@@ -108,18 +82,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumeroInvertido" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumero" />
 
     <Button
-        android:id="@+id/buttonMostrarResultados"
+        android:id="@+id/buttonCerrar"
         android:layout_width="353dp"
         android:layout_height="47dp"
-        android:text="MostrarResultados"
+        android:text="Cerrar"
         android:enabled="false"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSiguiente" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
