@@ -14,6 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String inNombres;
+    private String inApellidos;
+    private String inDividendo;
+    private String inDivisor;
+    private String inNumero;
+
 
     private EditText nombres;
     private EditText apellidos;
@@ -22,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText parteEntera;
     private EditText residuo;
     private EditText numeroInvertido;
+    private EditText numero;
     private Button siguiente;
     private Button mostrarResultados;
 
@@ -42,17 +49,20 @@ public class MainActivity extends AppCompatActivity {
         divisor = findViewById(R.id.editTextDivisor);
         parteEntera = findViewById(R.id.editTextParteEntera);
         residuo = findViewById(R.id.editTextResiduo);
-
+        mostrarResultados=findViewById((R.id.buttonMostrarResultados));
 
         Intent intent = getIntent();
         if (intent != null) {
-            nombres.setText(intent.getStringExtra("nombres"));
-            apellidos.setText(intent.getStringExtra("apellidos"));
-            dividendo.setText(intent.getStringExtra("dividendo"));
-            divisor.setText(intent.getStringExtra("divisor"));
-            numero.setText(intent.getStringExtra("numero"));
-            buttonCerra.setEnabled(true);
+            inNombres= intent.getStringExtra("nombres");
+            inApellidos= intent.getStringExtra("apellidos");
+            inDividendo= intent.getStringExtra("dividendo");
+            inDivisor= intent.getStringExtra("divisor");
+            inNumero= intent.getStringExtra("numero");
+
         }
+        if(inNombres!=null)
+            mostrarResultados.setEnabled(true);
+
     }
 
     public void Siguiente(View view){
@@ -60,6 +70,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void MostrarResultados(View view){
+        nombres.setText(inNombres.toString());
+        apellidos.setText(inApellidos.toString());
+        dividendo.setText(inDividendo.toString());
+        divisor.setText(inDivisor.toString());
 
+    }
+
+    public void Division(View view){
+        String divid = dividendo.getText().toString();
+        String divis = divisor.getText().toString();
+
+        int a = Integer.parseInt(divid);
+        int b = Integer.parseInt(divis);
+        int numero = a / b;
+
+        String result = String.valueOf(numero);
+        editTextnumero3.setText(result);
     }
 }

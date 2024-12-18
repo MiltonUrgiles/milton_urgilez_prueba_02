@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class PageActivity2 extends AppCompatActivity {
 
+    private String inNombres;
     private EditText nombres;
     private EditText apellidos;
     private EditText dividendo;
@@ -42,12 +43,15 @@ public class PageActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             nombres.setText(intent.getStringExtra("nombres"));
+            inNombres=intent.getStringExtra("nombres");
+
             apellidos.setText(intent.getStringExtra("apellidos"));
             dividendo.setText(intent.getStringExtra("dividendo"));
             divisor.setText(intent.getStringExtra("divisor"));
             numero.setText(intent.getStringExtra("numero"));
-            buttonCerra.setEnabled(true);
         }
+        if(inNombres!=null)
+            buttonCerra.setEnabled(true);
     }
 
 
@@ -60,6 +64,11 @@ public class PageActivity2 extends AppCompatActivity {
 
     public void cerrar(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("nombres",nombres.getText().toString());
+        intent.putExtra("apellidos",apellidos.getText().toString());
+        intent.putExtra("dividendo",dividendo.getText().toString());
+        intent.putExtra("divisor",divisor.getText().toString());
+        intent.putExtra("numero",numero.getText().toString());
         startActivity(intent);
     }
 }

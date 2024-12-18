@@ -115,9 +115,10 @@
         android:id="@+id/buttonMostrarResultados"
         android:layout_width="353dp"
         android:layout_height="47dp"
-        android:text="MostrarResultados"
         android:enabled="false"
+        android:onClick="MostrarResultados"
 
+        android:text="MostrarResultados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
