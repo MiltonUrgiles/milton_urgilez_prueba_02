@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         dividendo.setText(inDividendo.toString());
         divisor.setText(inDivisor.toString());
         Division(view);
-      //  Invertir();
+        Invertir();
     }
 
     public void Invertir() {
