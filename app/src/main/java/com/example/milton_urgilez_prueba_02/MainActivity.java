@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText dividendo;
     private EditText divisor;
     private EditText parteEntera;
-    private EditText residuo;
-    private EditText numeroInvertido;
+    private EditText editresiduo;
+    private EditText editTextNumeroInvertido;
     private EditText numero;
     private Button siguiente;
     private Button mostrarResultados;
@@ -48,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
         dividendo = findViewById(R.id.editTextDividendo);
         divisor = findViewById(R.id.editTextDivisor);
         parteEntera = findViewById(R.id.editTextParteEntera);
-        residuo = findViewById(R.id.editTextResiduo);
+        editresiduo = findViewById(R.id.editTextResiduo);
         mostrarResultados=findViewById((R.id.buttonMostrarResultados));
+        editTextNumeroInvertido=findViewById(R.id.editTextNumeroInvertido);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -74,18 +75,54 @@ public class MainActivity extends AppCompatActivity {
         apellidos.setText(inApellidos.toString());
         dividendo.setText(inDividendo.toString());
         divisor.setText(inDivisor.toString());
-
+        Division(view);
+      //  Invertir();
     }
 
-    public void Division(View view){
-        String divid = dividendo.getText().toString();
-        String divis = divisor.getText().toString();
+    public void Invertir() {
+
+        String valor = numero.getText().toString();
+
+        int valorNumerico = Integer.parseInt(valor);
+
+        int numeroInvertido = 0;
+
+
+        while (valorNumerico != 0) {
+
+            int digito = valorNumerico % 10;
+
+
+            numeroInvertido = numeroInvertido * 10 + digito;
+
+
+            valorNumerico = valorNumerico / 10;
+        }
+
+        editTextNumeroInvertido.setText(String.valueOf(numeroInvertido));
+    }
+
+
+    public void Division(View view) {
+
+        String divid = inDividendo;
+        String divis = inDivisor;
+
 
         int a = Integer.parseInt(divid);
         int b = Integer.parseInt(divis);
+
+
         int numero = a / b;
 
-        String result = String.valueOf(numero);
-        editTextnumero3.setText(result);
+
+        int residuo = a % b;
+
+
+        parteEntera.setText(String.valueOf(numero));
+
+
+        editresiduo.setText(String.valueOf(residuo));
     }
+
 }
